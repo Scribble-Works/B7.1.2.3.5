@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCF Power Final Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <div id="game-screen">
+            <h1>➗ HCF Power Challenge</h1>
+            <p class="objective">Objective B7.1.2.3.5: Find the HCF using the product of prime powers.</p>
+            
+            <div class="header-stats">
+                <div>Score: <span id="score-tracker">0</span></div>
+                <div>Question: <span id="question-counter">0</span> / 20</div>
+            </div>
+
+            <div class="problem-area">
+                <p>Find the HCF (Highest Common Factor) of two numbers, A and B, given their prime factorizations:</p>
+                <div id="number-a" class="number-line">A = <span class="index-form">?</span></div>
+                <div id="number-b" class="number-line">B = <span class="index-form">?</span></div>
+            </div>
+            
+            <p>Which option is the HCF? (Remember: Lowest power of common factors)</p>
+
+            <div id="options-container" class="options-container">
+                </div>
+
+            <div id="feedback-area" class="feedback">Click "Start Challenge" to begin!</div>
+            <button id="next-button">Next Question</button>
+        </div>
+
+        <div id="results-screen" class="results-screen">
+            <h2>🥳 Challenge Complete!</h2>
+            <p>You finished 20 questions. Your final score is:</p>
+            <div id="final-score-display" class="score-final"></div>
+            <p id="celebration-message">Great effort!</p>
+            <button class="restart-button" onclick="window.location.reload()">Restart Challenge</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

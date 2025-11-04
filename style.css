@@ -1,0 +1,160 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Light Pink Background */
+    background-color: #ffe6f2; 
+    color: #333;
+}
+
+.game-container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    /* Deep Pink Title */
+    color: #ff1493; 
+    margin-bottom: 10px;
+}
+
+.objective {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* --- Stats and Question Counter --- */
+.header-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #ffc0cb; /* Pink Dashes */
+}
+
+/* --- Problem Display --- */
+.problem-area {
+    /* Pink Border */
+    border: 2px solid #ffc0cb; 
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    /* Lavender Blush Background */
+    background-color: #fff0f5; 
+}
+
+.number-line {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.index-form {
+    font-weight: bold;
+    /* Dark Red Index Form */
+    color: #8b0000; 
+    margin-left: 10px;
+}
+
+/* --- Multiple Choice Options --- */
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.option-button {
+    padding: 15px;
+    font-size: 1.2em;
+    /* Hot Pink Border */
+    border: 2px solid #ff69b4; 
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff0f5; 
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.option-button:hover {
+    /* Pink Hover */
+    background-color: #ffc0cb; 
+    transform: scale(1.02);
+}
+
+.feedback {
+    min-height: 25px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.correct {
+    /* Medium Sea Green */
+    color: #3cb371; 
+}
+
+.incorrect {
+    /* Crimson Red */
+    color: #dc143c; 
+}
+
+#next-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Hot Pink Next Button */
+    background-color: #ff69b4; 
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    display: none; /* Hide until answer is checked */
+}
+
+/* --- Results Screen Styles --- */
+.results-screen {
+    display: none; /* Hidden initially */
+    padding: 20px;
+    /* Deep Pink Border */
+    border: 3px solid #ff1493; 
+    border-radius: 15px;
+    /* Very Light Pink Background for Results */
+    background-color: #fff0f5; 
+}
+
+.results-screen h2 {
+    color: #ff1493;
+    font-size: 2em;
+}
+
+.score-final {
+    font-size: 3em;
+    font-weight: bold;
+    color: #3cb371; /* Medium Sea Green Score */
+    margin: 10px 0 20px;
+}
+
+.restart-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    /* Pink Restart Button */
+    background-color: #ffc0cb; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
