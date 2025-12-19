@@ -4,6 +4,14 @@ let score = 0;
 let questionNumber = 0;
 let currentProblem = null;
 
+// --- Sound Effects ---
+const correctSound = new Audio('assets/brass-fanfare-reverberated-146263.mp3');
+const wrongSound = new Audio('assets/cartoon-fail-trumpet-278822.mp3');
+
+// Preload sounds to reduce playback latency
+correctSound.load();
+wrongSound.load();
+
 // Helper function to format powers nicely (e.g., 2^3)
 function formatPower(base, exponent) {
     return `${base}<sup style="font-size:0.6em; position:relative; top:-0.5em;">${exponent}</sup>`;
@@ -29,7 +37,7 @@ const ALL_PROBLEMS = [
     [
         [{base: 2, exponent: 3}, {base: 5, exponent: 1}, {base: 3, exponent: 4}],
         [{base: 2, exponent: 2}, {base: 5, exponent: 3}, {base: 7, exponent: 1}, {base: 3, exponent: 1}],
-        '2² × 3¹ × 5¹', 
+        '2² × 5¹ × 3¹', 
         ['2³ × 3⁴ × 5³ × 7¹', '2³ × 5¹', '2² × 3⁴ × 5³']
     ],
     // HCF = 3^3 (Only 3 is common)
@@ -157,13 +165,14 @@ function loadNewProblem() {
         const button = document.createElement('button');
         
         // Convert the raw option string (e.g., '2² × 3¹') into formatted HTML for display
-        const formattedOption = option.replace(/(\d)\¹/g, '$1') 
-                                      .replace(/(\d)\²/g, formatPower('$1', '2'))
-                                      .replace(/(\d)\³/g, formatPower('$1', '3'))
-                                      .replace(/(\d)\⁴/g, formatPower('$1', '4'))
-                                      .replace(/(\d)\⁵/g, formatPower('$1', '5'))
-                                      .replace(/(\d)\⁶/g, formatPower('$1', '6'))
-                                      .replace(/×/g, '&times;');
+        const formattedOption = option
+            .replace(/(\d)¹/g, (_, base) => formatPower(base, '1'))
+            .replace(/(\d)²/g, (_, base) => formatPower(base, '2'))
+            .replace(/(\d)³/g, (_, base) => formatPower(base, '3'))
+            .replace(/(\d)⁴/g, (_, base) => formatPower(base, '4'))
+            .replace(/(\d)⁵/g, (_, base) => formatPower(base, '5'))
+            .replace(/(\d)⁶/g, (_, base) => formatPower(base, '6'))
+            .replace(/×/g, '&times;');
 
         button.innerHTML = formattedOption;
         button.classList.add('option-button');
@@ -194,6 +203,10 @@ function checkAnswer(event) {
         event.target.style.backgroundColor = '#3cb371'; // Highlight correct button green
         score++;
         scoreTracker.textContent = score;
+
+        // Play correct sound
+        correctSound.currentTime = 0;
+        correctSound.play().catch(e => console.debug("Correct sound not played:", e));
     } else {
         feedbackArea.textContent = '❌ Incorrect. Review the lowest common power.';
         feedbackArea.className = 'feedback incorrect';
@@ -205,6 +218,10 @@ function checkAnswer(event) {
                 btn.style.border = '4px solid #3cb371';
             }
         });
+
+        // Play wrong sound
+        wrongSound.currentTime = 0;
+        wrongSound.play().catch(e => console.debug("Wrong sound not played:", e));
     }
     
     nextButton.style.display = 'block'; 

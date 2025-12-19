@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     margin: 0;
     /* Light Pink Background */
-    background-color: #ffe6f2; 
+    background-color: #c8dcfb; 
     color: #333;
 }
 
@@ -22,7 +22,7 @@ body {
 
 h1 {
     /* Deep Pink Title */
-    color: #ff1493; 
+    color: #141cff; 
     margin-bottom: 10px;
 }
 
@@ -42,13 +42,13 @@ h1 {
     font-size: 1.1em;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px dashed #ffc0cb; /* Pink Dashes */
+    border-bottom: 2px dashed #c0d9ff; /* Pink Dashes */
 }
 
 /* --- Problem Display --- */
 .problem-area {
     /* Pink Border */
-    border: 2px solid #ffc0cb; 
+    border: 2px solid #c0d9ff; 
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -82,7 +82,7 @@ h1 {
     padding: 15px;
     font-size: 1.2em;
     /* Hot Pink Border */
-    border: 2px solid #ff69b4; 
+    border: 2px solid #699eff; 
     border-radius: 10px;
     cursor: pointer;
     background-color: #fff0f5; 
@@ -91,7 +91,7 @@ h1 {
 
 .option-button:hover {
     /* Pink Hover */
-    background-color: #ffc0cb; 
+    background-color: #c0dbff; 
     transform: scale(1.02);
 }
 
@@ -118,7 +118,7 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     /* Hot Pink Next Button */
-    background-color: #ff69b4; 
+    background-color: #6994ff; 
     color: white;
     font-weight: bold;
     margin-top: 15px;
@@ -130,14 +130,14 @@ h1 {
     display: none; /* Hidden initially */
     padding: 20px;
     /* Deep Pink Border */
-    border: 3px solid #ff1493; 
+    border: 3px solid #1453ff; 
     border-radius: 15px;
     /* Very Light Pink Background for Results */
     background-color: #fff0f5; 
 }
 
 .results-screen h2 {
-    color: #ff1493;
+    color: #147eff;
     font-size: 2em;
 }
 
@@ -152,7 +152,7 @@ h1 {
     padding: 12px 25px;
     font-size: 1.2em;
     /* Pink Restart Button */
-    background-color: #ffc0cb; 
+    background-color: #c0d3ff; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
